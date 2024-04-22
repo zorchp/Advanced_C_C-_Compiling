@@ -1,5 +1,5 @@
-gcc -fPIC my_sin.c -shared -o libsin.dylib
+gcc -fPIC my_sin.c -shared -o libsin.so -lm
 
 gcc runtime-dynamic-load.c
 
-./a.out
+LD_LIBRARY_PATH=. ./a.out

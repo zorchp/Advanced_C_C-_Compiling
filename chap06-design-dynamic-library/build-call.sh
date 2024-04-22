@@ -1,5 +1,5 @@
-gcc -fPIC my_sin.c -shared -o libsin.dylib
+gcc -fPIC my_sin.c -shared -o libsin.so -lm
 
-gcc main.c -L./ -o a.out
+gcc main.c libsin.so -o a.out
 
-./a.out
+LD_LIBRARY_PATH=. ./a.out
